@@ -20,8 +20,8 @@ to suffer (because you find yourself generating numbers that have
 already been used) quicker than you might expect.
 
 Luckily, there's an easy solution, as outlined in [this comment][comment]
-on StackOverflow. Just in case you don't currently have access to
-StackOverflow right now, this is what it says:
+on StackOverflow. Just in case you don't have access to StackOverflow
+right now, this is what it says:
 
 > Pick a 8 or 9 digit number at random, say 839712541. Then, take your
 > order number's binary representation (for this example, I'm not using
