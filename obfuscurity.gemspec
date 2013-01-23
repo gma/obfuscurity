@@ -8,12 +8,22 @@ Gem::Specification.new do |gem|
   gem.version       = Obfuscurity::VERSION
   gem.authors       = ["Graham Ashton"]
   gem.email         = ["graham@effectif.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = <<-EOF
+Sometimes exposing your app's internal counters (e.g. your database's
+auto-incrementing primary keys) to the world is a bad idea. Maybe your
+competitors will be able to work out how many orders you're making per
+week, or your customers will be able to infer how many other customers
+you've got. This gem will allow you to obscure those numbers so you can
+use them in your URLs, your user interface, or as seemingly random order
+numbers.
+  EOF
+  gem.summary       = %q{Convert your database ids with seemingly random numbers}
+  gem.homepage      = "https://github.com/gma/obfuscurity"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
+
+  gem.add_development_dependency('nutrasuite')
 end
