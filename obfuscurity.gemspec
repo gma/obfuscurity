@@ -17,7 +17,7 @@ you've got. This gem will allow you to obscure those numbers so you can
 use them in your URLs, your user interface, or as seemingly random order
 numbers.
   EOF
-  gem.summary       = %q{Convert your database ids with seemingly random numbers}
+  gem.summary       = %q{Obfuscate your database ids, converting them to (seemingly) random numbers}
   gem.homepage      = "https://github.com/gma/obfuscurity"
 
   gem.files         = `git ls-files`.split($/)

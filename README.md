@@ -59,7 +59,7 @@ Or install it yourself as:
 
 ## Usage
 
-To obfuscate the number you want to hide, 
+To obfuscate the number you want to hide, make yourself a `Baffler`:
 
     baffler = Obfuscurity::Baffler.new
     baffler.obscure(1)  # -> 302841629
@@ -77,25 +77,25 @@ for details).
 
 ### Configuring behaviour
 
-If you'd like to use a different sequence (which you might, if you want
-to avoid people who search online for whatever you're using this
-obscured number for), specify a different seed when you create the
-`Baffler` instance:
+If you'd like to use a different sequence specify a different seed when
+you create the `Baffler` instance:
 
     baffler = Obfuscurity::Baffler.new(seed: 61493749)
 
 You'll no doubt have noticed that the numbers produced by default are
-rather large. The algorithm uses 30 bits by default, so any number as
-large as `2 ** 30` could be returned by the `obscure` method.
+rather large. The algorithm uses a fixed number of bits (30 by default),
+so any number as large as `2 ** 30` could be returned by the `obscure`
+method.
 
 If you know you won't need anything like that many unique numbers you
-can reduce the bit depth:
+can reduce the number of bits:
 
     baffler = Obfuscurity::Baffler.new(max_bits: 16)
     baffler.obscure(42)  # -> 21505
 
 Just be aware that the maximum number of unique numbers that you can
-cope with is `2 ** max_bits`, or in this case 32768 (which isn't a lot).
+cope with is `2 ** max_bits`, or in the case of 16 bits, just 32768
+(which isn't a lot).
 
 If you attempt to obscure a number that's too big to fit in the number
 space available (i.e. you exceed the value set for `max_bits`) a
