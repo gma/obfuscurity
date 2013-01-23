@@ -1,16 +1,18 @@
 # Obfuscurity
 
 Have you ever needed to generate a unique number for a piece of data (a
-little like a primary key) that's exposed to your customers?
+little like a primary key) that's exposed to your customers? You might
+use your database's primary key, but you don't want to expose an
+internal counter that could give away sensitive information.
 
-An order number in a billing system is a good example; you might not
-like your first few customers to realise that they're the first people
-to purchase from you (it doesn't instil confidence).
+An **order number in a billing system** is a good example; until you've
+processed thousands of orders you won't want people to know just how
+young your business it (in some cases, it doesn't instil confidence).
 
-Or perhaps you don't want your competitors to be able to work out how
-many orders you're taking per week? If you were to use an incrementing
-field from your database as the order number, that information would be
-painfully apparent.
+Or perhaps you don't want your competitors to be able to work out **how
+many people have signed up for your web app**, but want to include a
+customer number in the URL? If you were to use an incrementing field
+from your database, that information becomes painfully apparent.
 
 The obvious solution (generating a random number and checking to see
 whether it's already in use) feels like a hack, and performance starts
