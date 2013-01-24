@@ -64,8 +64,8 @@ Or install it yourself as:
 To obfuscate the number you want to hide, make yourself a `Baffler`:
 
     baffler = Obfuscurity::Baffler.new
-    baffler.obscure(1)  # -> 302841629
-    baffler.obscure(2)  # -> 571277085
+    baffler.obfuscate(1)  # -> 302841629
+    baffler.obfuscate(2)  # -> 571277085
 
 If you later want to convert back to your primary key, use the clarify
 method:
@@ -86,20 +86,20 @@ you create the `Baffler` instance:
 
 You'll no doubt have noticed that the numbers produced by default are
 rather large. The algorithm uses a fixed number of bits (30 by default),
-so any number as large as `2 ** 30` could be returned by the `obscure`
+so any number as large as `2 ** 30` could be returned by the `obfuscate`
 method.
 
 If you know you won't need anything like that many unique numbers you
 can reduce the number of bits:
 
     baffler = Obfuscurity::Baffler.new(max_bits: 16)
-    baffler.obscure(42)  # -> 21505
+    baffler.obfuscate(42)  # -> 21505
 
 Just be aware that the maximum number of unique numbers that you can
 cope with is `2 ** max_bits`, or in the case of 16 bits, just 32768
 (which isn't a lot).
 
-If you attempt to obscure a number that's too big to fit in the number
+If you attempt to obfuscate a number that's too big to fit in the number
 space available (i.e. you exceed the value set for `max_bits`) a
 `Obfuscurity::Error` exception will be raised.
 
